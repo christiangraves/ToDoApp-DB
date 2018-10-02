@@ -29,7 +29,7 @@ module.exports = function(app){
     app.delete('/api/deleteList/:index', function(req, res){
         let deleteIndex = parseFloat(req.params.index);
         
-        db.Items.findOneAndRemove({'indexNum': deleteIndex})
+        db.Items.findOneAndDelete({'indexNum': deleteIndex})
             .then(function(dbItems){
                 res.json(dbItems)
             })
