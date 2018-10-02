@@ -1,0 +1,65 @@
+body{
+    height: 98vh;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 60px 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+#theTitle{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#be6cb2+0,b355a0+0,941476+47,9f54dd+100 */
+background: #be6cb2; /* Old browsers */
+background: -moz-linear-gradient(left,  #be6cb2 0%, #b355a0 0%, #941476 47%, #9f54dd 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #be6cb2 0%,#b355a0 0%,#941476 47%,#9f54dd 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #be6cb2 0%,#b355a0 0%,#941476 47%,#9f54dd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be6cb2', endColorstr='#9f54dd',GradientType=1 );  IE6-9 */
+grid-row: span 1;
+grid-column: span 1;
+color: white;
+font-size: 45px;
+padding-top: 8px;
+}
+
+
+#theList{
+    padding-top: 10px;
+    text-align: center;
+    
+}
+
+form{
+    padding-top: 10px;
+}
+
+input[type=text]{
+    /*border-color: purple;*/
+    border:none;
+    border: solid 2px;
+    border-color: purple;
+    border-radius: 10px;
+}
+
+.fa-arrow-right{
+    font-size: 15px;
+}
+
+ @media only screen and (min-width: 600px) {
+
+    #theList{
+        padding-top: 10px;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 36%;
+        margin-right: 36%;
+        border: solid 2px;
+        border-color: purple;
+        border-radius: 10px;
+        
+    }
+
+}
