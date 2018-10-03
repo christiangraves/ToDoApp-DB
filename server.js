@@ -16,7 +16,7 @@ app.use(express.json());
 //Serve public folder as static directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://cgraves53:qR!23@$T@ds121373.mlab.com:21373/heroku_3d64tnnr', { useNewUrlParser: true })
+mongoose.connect('mongodb://theuser:qr123456.mlab.com:21373/heroku_3d64tnnr', { useNewUrlParser: true })
 //mongoose.connect('mongodb://localhost/todomaster', { useNewUrlParser: true });
 
 //Routes
