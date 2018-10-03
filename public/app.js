@@ -9,7 +9,11 @@ $(function(){
         .then(function (theList) {
             renderItems('#itemList', theList);
             console.log(state.index);
+        })
+        .catch(function(err){
+            res.json(err)
         });
+
 
     //render function for saved items
     const renderItems = function(outputElement, dataList){
@@ -36,10 +40,13 @@ $(function(){
         state.index = 0;
         $('#itemList').empty();
         $.ajax({ url: "/api/showList", method: "GET" })
-        .then(function (theList) {
-            renderItems('#itemList', theList);
-            
-        });
+            .then(function (theList) {
+                renderItems('#itemList', theList);
+                
+            })
+            .catch(function(err){
+                res.json(err)
+            });
     }
 
 
@@ -53,14 +60,17 @@ $(function(){
         };
 
 
-        $.ajax({ url: '/api/addList', method: 'POST', data: newItem }).then(
-            function(){  
+        $.ajax({ url: '/api/addList', method: 'POST', data: newItem })
+        .then(function(){  
                     const displayItem = $('#enteredItem').val().trim();
                     //console.log(data);
                     renderItem('#itemList', displayItem);
                     $('#enteredItem').val('');
                     
-            });
+            })
+        .catch(function(err){
+            res.json(err)
+        });
         //Single Item Render function
         const renderItem = function(singleOutputElement, theItem){
             
@@ -88,6 +98,9 @@ $(function(){
         $.ajax({url: `/api/deleteList/${j}`, method: 'DELETE'})
             .then(function(data){
                 console.log(data);
+            })
+            .catch(function(err){
+                res.json(err);
             });
         rerender();
     })
