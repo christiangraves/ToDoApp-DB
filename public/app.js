@@ -10,9 +10,9 @@ $(function(){
             renderItems('#itemList', theList);
             console.log(state.index);
         })
-        .catch(function(err){
+        /*.catch(function(err){
             res.json(err)
-        });
+        });*/
 
 
     //render function for saved items
@@ -44,9 +44,7 @@ $(function(){
                 renderItems('#itemList', theList);
                 
             })
-            .catch(function(err){
-                res.json(err)
-            });
+
     }
 
 
@@ -68,9 +66,7 @@ $(function(){
                     $('#enteredItem').val('');
                     
             })
-        .catch(function(err){
-            res.json(err)
-        });
+ 
         //Single Item Render function
         const renderItem = function(singleOutputElement, theItem){
             
@@ -99,9 +95,7 @@ $(function(){
             .then(function(data){
                 console.log(data);
             })
-            .catch(function(err){
-                res.json(err);
-            });
+
         rerender();
     })
 
