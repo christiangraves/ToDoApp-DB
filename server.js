@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 //Define PORT for server listening
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 //Setup server to parse request request body for usage
 app.use(express.urlencoded({extended: true}));
