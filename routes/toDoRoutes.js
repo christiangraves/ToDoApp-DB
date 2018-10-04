@@ -26,19 +26,15 @@ module.exports = function(app){
      });
 
     //Delete item from toDo List
-    app.delete('/api/deleteList/:index', function(req, res){
-        let deleteIndex = parseFloat(req.params.index);
+    app.delete('/api/deleteList/:item', function(req, res){
+        let deleteItem = req.params.item;
         
-        db.Items.findOneAndDelete({'indexNum': deleteIndex})
+        db.Items.findOneAndDelete({'item': deleteItem})
             .then(function(dbItems){
                 res.json(dbItems)
             })
             .catch(function(err){
                 res.json(err)
             });
-        
-        //toDoList.splice(req.params.index, 1);
-        //return true if successful
     });
-
 }

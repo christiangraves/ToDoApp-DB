@@ -10,9 +10,6 @@ $(function(){
             renderItems('#itemList', theList);
             console.log(state.index);
         })
-        /*.catch(function(err){
-            res.json(err)
-        });*/
 
 
     //render function for saved items
@@ -22,11 +19,11 @@ $(function(){
 
             const output = $(outputElement);
 
-            const thebutton = `<button class="newButt" buttindex="${state.index}"><i class="fas fa-times"></i></button>`;
+            const thebutton = `<button class="newButt" buttindex="${dataList[state.index].item}"><i class="fas fa-times"></i></button>`;
 
             const listItem = $('<li>')
                 .addClass('allItems')
-                .attr('item-index', `${state.index}`);
+                .attr('item-index', `${dataList[state.index].item}`);
             
             listItem.append(
                 $("<h2>").append(`${dataList[state.index].item} ${thebutton}`)
@@ -54,7 +51,6 @@ $(function(){
 
         const newItem = {
             item: $('#enteredItem').val().trim(),
-            indexNum: state.index
         };
 
 
@@ -74,24 +70,22 @@ $(function(){
             
             const singleListItem  = $('<li>')
             .addClass('allItems')
-            .attr('item-index', `${state.index}`);
+            .attr('item-index', `${theItem}`);
 
             singleListItem.append(
-                $("<h2>").append(`${theItem} <button class="newButt"><i class="fas fa-times"></i></button> `)
+                $("<h2>").append(`${theItem} <button class="newButt" item-index=${theItem}><i class="fas fa-times"></i></button> `)
             );
 
            singleOutput.append(singleListItem);
-           state.index++;
-           
+           state.index++;  
         }
 
     });
-    //
+    //button listener and Delete ajax call for items
     $('#itemList').on('click', '.newButt', function(){
 
         const deleteButt = $(this).attr('buttindex');
-        const j = parseFloat(deleteButt);
-        $.ajax({url: `/api/deleteList/${j}`, method: 'DELETE'})
+        $.ajax({url: `/api/deleteList/${deleteButt}`, method: 'DELETE'})
             .then(function(data){
                 console.log(data);
             })

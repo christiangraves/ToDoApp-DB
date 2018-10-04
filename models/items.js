@@ -7,9 +7,6 @@ const ItemSchema = new Schema({
         type: String,
         required: "Please enter an item."
     },
-    indexNum:{
-        type: Number
-    }
 })
 
 const Items = mongoose.model("Items", ItemSchema);
