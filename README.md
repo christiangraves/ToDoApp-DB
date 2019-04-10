@@ -1,4 +1,4 @@
-# Homework 7 - To Do List App with Mongo
+- To Do List App with Mongo
 
 There is **1 part** to this homework.
 
